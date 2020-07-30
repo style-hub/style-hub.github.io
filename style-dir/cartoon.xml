@@ -1,0 +1,574 @@
+<!DOCTYPE qgis_style>
+<qgis_style version="2">
+  <symbols>
+    <symbol type="fill" force_rhr="0" alpha="1" clip_to_extent="1" tags="Cartoon" name="Bloated">
+      <layer class="SimpleFill" enabled="1" pass="0" locked="0">
+        <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+        <prop v="231,246,248,255" k="color"/>
+        <prop v="bevel" k="joinstyle"/>
+        <prop v="0,0" k="offset"/>
+        <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+        <prop v="MM" k="offset_unit"/>
+        <prop v="35,35,35,0" k="outline_color"/>
+        <prop v="no" k="outline_style"/>
+        <prop v="0.26" k="outline_width"/>
+        <prop v="MM" k="outline_width_unit"/>
+        <prop v="solid" k="style"/>
+        <data_defined_properties>
+          <Option type="Map">
+            <Option type="QString" value="" name="name"/>
+            <Option name="properties"/>
+            <Option type="QString" value="collection" name="type"/>
+          </Option>
+        </data_defined_properties>
+      </layer>
+      <layer class="GeometryGenerator" enabled="1" pass="0" locked="0">
+        <prop v="Line" k="SymbolType"/>
+        <prop v="-- Change value for &quot;thickness&quot; (also try negative values)&#xa;with_variable('thickness',0.1&#xa;&#xa;-- No need to change anything below&#xa;,&#xa;collect_geometries(&#xa;array_foreach(&#xa;generate_series(1,num_points($geometry)-1)&#xa;,&#xa;geom_from_wkt(&#xa;'CIRCULARSTRING('||(x(point_n($geometry,@element)))||' '||&#xa;(y(point_n($geometry,@element))) ||', '||&#xa;&#xa;(x(&#xa;&#x9;project(&#xa;&#x9;point_n($geometry,@element),&#xa;&#x9;distance(&#xa;&#x9;&#x9;point_n($geometry,@element),&#xa;&#x9;&#x9;point_n($geometry,@element+1)&#xa;&#x9;)/2,&#xa;&#x9;azimuth(&#xa;&#x9;&#x9;point_n($geometry,@element),&#xa;&#x9;&#x9;point_n($geometry,@element+1)&#xa;&#x9;)- @thickness&#xa;&#x9;)&#xa;))||' '||&#xa;(y(&#xa;&#x9;project(&#xa;&#x9;point_n($geometry,@element),&#xa;&#x9;distance(&#xa;&#x9;&#x9;point_n($geometry,@element),&#xa;&#x9;&#x9;point_n($geometry,@element+1)&#xa;&#x9;)/2,&#xa;&#x9;azimuth(&#xa;&#x9;&#x9;point_n($geometry,@element),&#xa;&#x9;&#x9;point_n($geometry,@element+1)&#xa;&#x9;)- @thickness&#xa;&#x9;)&#xa;))||', '||&#xa;&#xa;(x(point_n($geometry,@element+1)))||' '||&#xa;(y(point_n($geometry,@element+1)))||')'&#xa;)&#xa;)&#xa;)&#xa;)" k="geometryModifier"/>
+        <data_defined_properties>
+          <Option type="Map">
+            <Option type="QString" value="" name="name"/>
+            <Option name="properties"/>
+            <Option type="QString" value="collection" name="type"/>
+          </Option>
+        </data_defined_properties>
+        <symbol type="line" force_rhr="0" alpha="1" clip_to_extent="1" name="@Bloated@1">
+          <layer class="SimpleLine" enabled="1" pass="0" locked="1">
+            <prop v="round" k="capstyle"/>
+            <prop v="5;2" k="customdash"/>
+            <prop v="3x:0,0,0,0,0,0" k="customdash_map_unit_scale"/>
+            <prop v="MM" k="customdash_unit"/>
+            <prop v="0" k="draw_inside_polygon"/>
+            <prop v="bevel" k="joinstyle"/>
+            <prop v="35,35,35,255" k="line_color"/>
+            <prop v="solid" k="line_style"/>
+            <prop v="1.86" k="line_width"/>
+            <prop v="MM" k="line_width_unit"/>
+            <prop v="0.6" k="offset"/>
+            <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+            <prop v="MM" k="offset_unit"/>
+            <prop v="0" k="ring_filter"/>
+            <prop v="0" k="use_custom_dash"/>
+            <prop v="3x:0,0,0,0,0,0" k="width_map_unit_scale"/>
+            <data_defined_properties>
+              <Option type="Map">
+                <Option type="QString" value="" name="name"/>
+                <Option name="properties"/>
+                <Option type="QString" value="collection" name="type"/>
+              </Option>
+            </data_defined_properties>
+          </layer>
+        </symbol>
+      </layer>
+    </symbol>
+    <symbol type="fill" force_rhr="0" alpha="1" clip_to_extent="1" tags="Cartoon" name="Bursting">
+      <layer class="SimpleFill" enabled="1" pass="0" locked="0">
+        <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+        <prop v="229,229,210,255" k="color"/>
+        <prop v="bevel" k="joinstyle"/>
+        <prop v="0,0" k="offset"/>
+        <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+        <prop v="MM" k="offset_unit"/>
+        <prop v="35,35,35,0" k="outline_color"/>
+        <prop v="no" k="outline_style"/>
+        <prop v="0.26" k="outline_width"/>
+        <prop v="MM" k="outline_width_unit"/>
+        <prop v="solid" k="style"/>
+        <data_defined_properties>
+          <Option type="Map">
+            <Option type="QString" value="" name="name"/>
+            <Option name="properties"/>
+            <Option type="QString" value="collection" name="type"/>
+          </Option>
+        </data_defined_properties>
+      </layer>
+      <layer class="GeometryGenerator" enabled="1" pass="0" locked="0">
+        <prop v="Line" k="SymbolType"/>
+        <prop v="-- Change value for &quot;burst_distance&quot;&#xa;with_variable('burst_distance',7&#xa;-- Data in lat/long needs really small decimal numbers.&#xa;&#xa;-- No need to change anything below&#xa;,&#xa;collect_geometries(&#xa;array_foreach(&#xa;generate_series(1,num_points($geometry)-1)&#xa;,&#xa;geom_from_wkt(&#xa;'CIRCULARSTRING('||(&#xa;x(&#xa;&#x9;project(&#xa;&#x9;point_n($geometry,@element),&#xa;&#x9;@burst_distance,&#xa;&#x9;azimuth(&#xa;&#x9;&#x9;point_n($geometry,@element),&#xa;&#x9;&#x9;point_n($geometry,@element+1)&#xa;&#x9;)-pi()/2&#xa;&#x9;)&#xa;)&#xa;)||' '||&#xa;(&#xa;y(&#xa;&#x9;project(&#xa;&#x9;point_n($geometry,@element),&#xa;&#x9;@burst_distance,&#xa;&#x9;azimuth(&#xa;&#x9;&#x9;point_n($geometry,@element),&#xa;&#x9;&#x9;point_n($geometry,@element+1)&#xa;&#x9;)-pi()/2&#xa;&#x9;)&#xa;)&#xa;) ||', '||&#xa;&#xa;(x(&#xa;&#x9;project(&#xa;&#x9;point_n($geometry,@element),&#xa;&#x9;distance(&#xa;&#x9;&#x9;point_n($geometry,@element),&#xa;&#x9;&#x9;point_n($geometry,@element+1)&#xa;&#x9;)/2,&#xa;&#x9;azimuth(&#xa;&#x9;&#x9;point_n($geometry,@element),&#xa;&#x9;&#x9;point_n($geometry,@element+1)&#xa;&#x9;)&#xa;&#x9;)&#xa;))||' '||&#xa;(y(&#xa;&#x9;project(&#xa;&#x9;point_n($geometry,@element),&#xa;&#x9;distance(&#xa;&#x9;&#x9;point_n($geometry,@element),&#xa;&#x9;&#x9;point_n($geometry,@element+1)&#xa;&#x9;)/2,&#xa;&#x9;azimuth(&#xa;&#x9;&#x9;point_n($geometry,@element),&#xa;&#x9;&#x9;point_n($geometry,@element+1)&#xa;&#x9;)&#xa;&#x9;)&#xa;))||', '||&#xa;&#xa;(&#xa;x(&#xa;&#x9;project(&#xa;&#x9;point_n($geometry,@element+1),&#xa;&#x9;@burst_distance,&#xa;&#x9;azimuth(&#xa;&#x9;&#x9;point_n($geometry,@element+1),&#xa;&#x9;&#x9;point_n($geometry,@element)&#xa;&#x9;)+pi()/2&#xa;&#x9;)&#xa;)&#xa;)||' '||&#xa;(&#xa;y(&#xa;&#x9;project(&#xa;&#x9;point_n($geometry,@element+1),&#xa;&#x9;@burst_distance,&#xa;&#x9;azimuth(&#xa;&#x9;&#x9;point_n($geometry,@element+1),&#xa;&#x9;&#x9;point_n($geometry,@element)&#xa;&#x9;)+pi()/2&#xa;&#x9;)&#xa;)&#xa;)||')'&#xa;)&#xa;)&#xa;)&#xa;)" k="geometryModifier"/>
+        <data_defined_properties>
+          <Option type="Map">
+            <Option type="QString" value="" name="name"/>
+            <Option name="properties"/>
+            <Option type="QString" value="collection" name="type"/>
+          </Option>
+        </data_defined_properties>
+        <symbol type="line" force_rhr="0" alpha="1" clip_to_extent="1" name="@Bursting@1">
+          <layer class="SimpleLine" enabled="1" pass="0" locked="1">
+            <prop v="round" k="capstyle"/>
+            <prop v="5;2" k="customdash"/>
+            <prop v="3x:0,0,0,0,0,0" k="customdash_map_unit_scale"/>
+            <prop v="MM" k="customdash_unit"/>
+            <prop v="0" k="draw_inside_polygon"/>
+            <prop v="bevel" k="joinstyle"/>
+            <prop v="35,35,35,255" k="line_color"/>
+            <prop v="solid" k="line_style"/>
+            <prop v="0.66" k="line_width"/>
+            <prop v="MM" k="line_width_unit"/>
+            <prop v="0" k="offset"/>
+            <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+            <prop v="MM" k="offset_unit"/>
+            <prop v="0" k="ring_filter"/>
+            <prop v="0" k="use_custom_dash"/>
+            <prop v="3x:0,0,0,0,0,0" k="width_map_unit_scale"/>
+            <data_defined_properties>
+              <Option type="Map">
+                <Option type="QString" value="" name="name"/>
+                <Option name="properties"/>
+                <Option type="QString" value="collection" name="type"/>
+              </Option>
+            </data_defined_properties>
+          </layer>
+        </symbol>
+      </layer>
+    </symbol>
+    <symbol type="fill" force_rhr="0" alpha="1" clip_to_extent="1" tags="Cartoon" name="Childrens Book Building">
+      <layer class="SimpleFill" enabled="1" pass="0" locked="0">
+        <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+        <prop v="255,255,255,255" k="color"/>
+        <prop v="bevel" k="joinstyle"/>
+        <prop v="0,0" k="offset"/>
+        <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+        <prop v="MM" k="offset_unit"/>
+        <prop v="35,35,35,255" k="outline_color"/>
+        <prop v="solid" k="outline_style"/>
+        <prop v="0.46" k="outline_width"/>
+        <prop v="MM" k="outline_width_unit"/>
+        <prop v="solid" k="style"/>
+        <effect type="effectStack" enabled="1">
+          <effect type="dropShadow">
+            <prop v="13" k="blend_mode"/>
+            <prop v="2.645" k="blur_level"/>
+            <prop v="MM" k="blur_unit"/>
+            <prop v="3x:0,0,0,0,0,0" k="blur_unit_scale"/>
+            <prop v="0,0,0,255" k="color"/>
+            <prop v="2" k="draw_mode"/>
+            <prop v="0" k="enabled"/>
+            <prop v="135" k="offset_angle"/>
+            <prop v="2" k="offset_distance"/>
+            <prop v="MM" k="offset_unit"/>
+            <prop v="3x:0,0,0,0,0,0" k="offset_unit_scale"/>
+            <prop v="1" k="opacity"/>
+          </effect>
+          <effect type="outerGlow">
+            <prop v="0" k="blend_mode"/>
+            <prop v="2.645" k="blur_level"/>
+            <prop v="MM" k="blur_unit"/>
+            <prop v="3x:0,0,0,0,0,0" k="blur_unit_scale"/>
+            <prop v="0,0,255,255" k="color1"/>
+            <prop v="0,255,0,255" k="color2"/>
+            <prop v="0" k="color_type"/>
+            <prop v="0" k="discrete"/>
+            <prop v="2" k="draw_mode"/>
+            <prop v="0" k="enabled"/>
+            <prop v="0.5" k="opacity"/>
+            <prop v="gradient" k="rampType"/>
+            <prop v="255,255,255,255" k="single_color"/>
+            <prop v="2" k="spread"/>
+            <prop v="MM" k="spread_unit"/>
+            <prop v="3x:0,0,0,0,0,0" k="spread_unit_scale"/>
+          </effect>
+          <effect type="drawSource">
+            <prop v="0" k="blend_mode"/>
+            <prop v="2" k="draw_mode"/>
+            <prop v="1" k="enabled"/>
+            <prop v="1" k="opacity"/>
+          </effect>
+          <effect type="innerShadow">
+            <prop v="13" k="blend_mode"/>
+            <prop v="0" k="blur_level"/>
+            <prop v="MM" k="blur_unit"/>
+            <prop v="3x:0,0,0,0,0,0" k="blur_unit_scale"/>
+            <prop v="0,0,0,255" k="color"/>
+            <prop v="2" k="draw_mode"/>
+            <prop v="1" k="enabled"/>
+            <prop v="-63" k="offset_angle"/>
+            <prop v="2.4" k="offset_distance"/>
+            <prop v="MM" k="offset_unit"/>
+            <prop v="3x:0,0,0,0,0,0" k="offset_unit_scale"/>
+            <prop v="0.306" k="opacity"/>
+          </effect>
+          <effect type="innerGlow">
+            <prop v="0" k="blend_mode"/>
+            <prop v="2.645" k="blur_level"/>
+            <prop v="MM" k="blur_unit"/>
+            <prop v="3x:0,0,0,0,0,0" k="blur_unit_scale"/>
+            <prop v="0,0,255,255" k="color1"/>
+            <prop v="0,255,0,255" k="color2"/>
+            <prop v="0" k="color_type"/>
+            <prop v="0" k="discrete"/>
+            <prop v="2" k="draw_mode"/>
+            <prop v="0" k="enabled"/>
+            <prop v="0.5" k="opacity"/>
+            <prop v="gradient" k="rampType"/>
+            <prop v="255,255,255,255" k="single_color"/>
+            <prop v="2" k="spread"/>
+            <prop v="MM" k="spread_unit"/>
+            <prop v="3x:0,0,0,0,0,0" k="spread_unit_scale"/>
+          </effect>
+        </effect>
+        <data_defined_properties>
+          <Option type="Map">
+            <Option type="QString" value="" name="name"/>
+            <Option name="properties"/>
+            <Option type="QString" value="collection" name="type"/>
+          </Option>
+        </data_defined_properties>
+      </layer>
+    </symbol>
+    <symbol type="fill" force_rhr="0" alpha="1" clip_to_extent="1" tags="Cartoon" name="Childrens Book Forrest">
+      <layer class="GeometryGenerator" enabled="1" pass="0" locked="0">
+        <prop v="Fill" k="SymbolType"/>
+        <prop v="smooth($geometry)" k="geometryModifier"/>
+        <data_defined_properties>
+          <Option type="Map">
+            <Option type="QString" value="" name="name"/>
+            <Option name="properties"/>
+            <Option type="QString" value="collection" name="type"/>
+          </Option>
+        </data_defined_properties>
+        <symbol type="fill" force_rhr="0" alpha="1" clip_to_extent="1" name="@Childrens Book Forrest@0">
+          <layer class="SimpleFill" enabled="1" pass="0" locked="0">
+            <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+            <prop v="176,204,114,255" k="color"/>
+            <prop v="bevel" k="joinstyle"/>
+            <prop v="0,0" k="offset"/>
+            <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+            <prop v="MM" k="offset_unit"/>
+            <prop v="35,35,35,255" k="outline_color"/>
+            <prop v="solid" k="outline_style"/>
+            <prop v="1.06" k="outline_width"/>
+            <prop v="MM" k="outline_width_unit"/>
+            <prop v="solid" k="style"/>
+            <effect type="effectStack" enabled="0">
+              <effect type="dropShadow">
+                <prop v="13" k="blend_mode"/>
+                <prop v="2.645" k="blur_level"/>
+                <prop v="MM" k="blur_unit"/>
+                <prop v="3x:0,0,0,0,0,0" k="blur_unit_scale"/>
+                <prop v="0,0,0,255" k="color"/>
+                <prop v="2" k="draw_mode"/>
+                <prop v="0" k="enabled"/>
+                <prop v="135" k="offset_angle"/>
+                <prop v="2" k="offset_distance"/>
+                <prop v="MM" k="offset_unit"/>
+                <prop v="3x:0,0,0,0,0,0" k="offset_unit_scale"/>
+                <prop v="1" k="opacity"/>
+              </effect>
+              <effect type="outerGlow">
+                <prop v="0" k="blend_mode"/>
+                <prop v="2.645" k="blur_level"/>
+                <prop v="MM" k="blur_unit"/>
+                <prop v="3x:0,0,0,0,0,0" k="blur_unit_scale"/>
+                <prop v="0,0,255,255" k="color1"/>
+                <prop v="0,255,0,255" k="color2"/>
+                <prop v="0" k="color_type"/>
+                <prop v="0" k="discrete"/>
+                <prop v="2" k="draw_mode"/>
+                <prop v="0" k="enabled"/>
+                <prop v="0.5" k="opacity"/>
+                <prop v="gradient" k="rampType"/>
+                <prop v="255,255,255,255" k="single_color"/>
+                <prop v="2" k="spread"/>
+                <prop v="MM" k="spread_unit"/>
+                <prop v="3x:0,0,0,0,0,0" k="spread_unit_scale"/>
+              </effect>
+              <effect type="drawSource">
+                <prop v="0" k="blend_mode"/>
+                <prop v="2" k="draw_mode"/>
+                <prop v="1" k="enabled"/>
+                <prop v="1" k="opacity"/>
+              </effect>
+              <effect type="innerShadow">
+                <prop v="13" k="blend_mode"/>
+                <prop v="0" k="blur_level"/>
+                <prop v="MM" k="blur_unit"/>
+                <prop v="3x:0,0,0,0,0,0" k="blur_unit_scale"/>
+                <prop v="0,0,0,255" k="color"/>
+                <prop v="2" k="draw_mode"/>
+                <prop v="1" k="enabled"/>
+                <prop v="-43" k="offset_angle"/>
+                <prop v="8.6" k="offset_distance"/>
+                <prop v="MM" k="offset_unit"/>
+                <prop v="3x:0,0,0,0,0,0" k="offset_unit_scale"/>
+                <prop v="0.258" k="opacity"/>
+              </effect>
+              <effect type="innerGlow">
+                <prop v="0" k="blend_mode"/>
+                <prop v="2.645" k="blur_level"/>
+                <prop v="MM" k="blur_unit"/>
+                <prop v="3x:0,0,0,0,0,0" k="blur_unit_scale"/>
+                <prop v="0,0,255,255" k="color1"/>
+                <prop v="0,255,0,255" k="color2"/>
+                <prop v="0" k="color_type"/>
+                <prop v="0" k="discrete"/>
+                <prop v="2" k="draw_mode"/>
+                <prop v="0" k="enabled"/>
+                <prop v="0.5" k="opacity"/>
+                <prop v="gradient" k="rampType"/>
+                <prop v="255,255,255,255" k="single_color"/>
+                <prop v="2" k="spread"/>
+                <prop v="MM" k="spread_unit"/>
+                <prop v="3x:0,0,0,0,0,0" k="spread_unit_scale"/>
+              </effect>
+            </effect>
+            <data_defined_properties>
+              <Option type="Map">
+                <Option type="QString" value="" name="name"/>
+                <Option name="properties"/>
+                <Option type="QString" value="collection" name="type"/>
+              </Option>
+            </data_defined_properties>
+          </layer>
+          <layer class="GeometryGenerator" enabled="1" pass="0" locked="0">
+            <prop v="Fill" k="SymbolType"/>
+            <prop v="smooth(simplify($geometry,0.0001),5)" k="geometryModifier"/>
+            <data_defined_properties>
+              <Option type="Map">
+                <Option type="QString" value="" name="name"/>
+                <Option name="properties"/>
+                <Option type="QString" value="collection" name="type"/>
+              </Option>
+            </data_defined_properties>
+            <symbol type="fill" force_rhr="0" alpha="1" clip_to_extent="1" name="@@Childrens Book Forrest@0@1">
+              <layer class="SimpleFill" enabled="1" pass="0" locked="0">
+                <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+                <prop v="176,204,114,255" k="color"/>
+                <prop v="bevel" k="joinstyle"/>
+                <prop v="0,0" k="offset"/>
+                <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+                <prop v="MM" k="offset_unit"/>
+                <prop v="35,35,35,255" k="outline_color"/>
+                <prop v="solid" k="outline_style"/>
+                <prop v="1.06" k="outline_width"/>
+                <prop v="MM" k="outline_width_unit"/>
+                <prop v="solid" k="style"/>
+                <effect type="effectStack" enabled="1">
+                  <effect type="dropShadow">
+                    <prop v="13" k="blend_mode"/>
+                    <prop v="2.645" k="blur_level"/>
+                    <prop v="MM" k="blur_unit"/>
+                    <prop v="3x:0,0,0,0,0,0" k="blur_unit_scale"/>
+                    <prop v="0,0,0,255" k="color"/>
+                    <prop v="2" k="draw_mode"/>
+                    <prop v="0" k="enabled"/>
+                    <prop v="135" k="offset_angle"/>
+                    <prop v="2" k="offset_distance"/>
+                    <prop v="MM" k="offset_unit"/>
+                    <prop v="3x:0,0,0,0,0,0" k="offset_unit_scale"/>
+                    <prop v="1" k="opacity"/>
+                  </effect>
+                  <effect type="outerGlow">
+                    <prop v="0" k="blend_mode"/>
+                    <prop v="2.645" k="blur_level"/>
+                    <prop v="MM" k="blur_unit"/>
+                    <prop v="3x:0,0,0,0,0,0" k="blur_unit_scale"/>
+                    <prop v="0,0,255,255" k="color1"/>
+                    <prop v="0,255,0,255" k="color2"/>
+                    <prop v="0" k="color_type"/>
+                    <prop v="0" k="discrete"/>
+                    <prop v="2" k="draw_mode"/>
+                    <prop v="0" k="enabled"/>
+                    <prop v="0.5" k="opacity"/>
+                    <prop v="gradient" k="rampType"/>
+                    <prop v="255,255,255,255" k="single_color"/>
+                    <prop v="2" k="spread"/>
+                    <prop v="MM" k="spread_unit"/>
+                    <prop v="3x:0,0,0,0,0,0" k="spread_unit_scale"/>
+                  </effect>
+                  <effect type="drawSource">
+                    <prop v="0" k="blend_mode"/>
+                    <prop v="2" k="draw_mode"/>
+                    <prop v="0" k="enabled"/>
+                    <prop v="1" k="opacity"/>
+                  </effect>
+                  <effect type="innerShadow">
+                    <prop v="13" k="blend_mode"/>
+                    <prop v="0" k="blur_level"/>
+                    <prop v="MM" k="blur_unit"/>
+                    <prop v="3x:0,0,0,0,0,0" k="blur_unit_scale"/>
+                    <prop v="0,0,0,255" k="color"/>
+                    <prop v="2" k="draw_mode"/>
+                    <prop v="1" k="enabled"/>
+                    <prop v="-69" k="offset_angle"/>
+                    <prop v="10" k="offset_distance"/>
+                    <prop v="MM" k="offset_unit"/>
+                    <prop v="3x:0,0,0,0,0,0" k="offset_unit_scale"/>
+                    <prop v="0.183" k="opacity"/>
+                  </effect>
+                  <effect type="innerGlow">
+                    <prop v="0" k="blend_mode"/>
+                    <prop v="2.645" k="blur_level"/>
+                    <prop v="MM" k="blur_unit"/>
+                    <prop v="3x:0,0,0,0,0,0" k="blur_unit_scale"/>
+                    <prop v="0,0,255,255" k="color1"/>
+                    <prop v="0,255,0,255" k="color2"/>
+                    <prop v="0" k="color_type"/>
+                    <prop v="0" k="discrete"/>
+                    <prop v="2" k="draw_mode"/>
+                    <prop v="0" k="enabled"/>
+                    <prop v="0.5" k="opacity"/>
+                    <prop v="gradient" k="rampType"/>
+                    <prop v="255,255,255,255" k="single_color"/>
+                    <prop v="2" k="spread"/>
+                    <prop v="MM" k="spread_unit"/>
+                    <prop v="3x:0,0,0,0,0,0" k="spread_unit_scale"/>
+                  </effect>
+                </effect>
+                <data_defined_properties>
+                  <Option type="Map">
+                    <Option type="QString" value="" name="name"/>
+                    <Option name="properties"/>
+                    <Option type="QString" value="collection" name="type"/>
+                  </Option>
+                </data_defined_properties>
+              </layer>
+            </symbol>
+          </layer>
+          <layer class="RandomMarkerFill" enabled="1" pass="0" locked="0">
+            <prop v="1" k="clip_points"/>
+            <prop v="1" k="count_method"/>
+            <prop v="2050" k="density_area"/>
+            <prop v="MM" k="density_area_unit"/>
+            <prop v="3x:0,0,0,0,0,0" k="density_area_unit_scale"/>
+            <prop v="10" k="point_count"/>
+            <prop v="429057116" k="seed"/>
+            <data_defined_properties>
+              <Option type="Map">
+                <Option type="QString" value="" name="name"/>
+                <Option name="properties"/>
+                <Option type="QString" value="collection" name="type"/>
+              </Option>
+            </data_defined_properties>
+            <symbol type="marker" force_rhr="0" alpha="1" clip_to_extent="1" name="@@Childrens Book Forrest@0@2">
+              <layer class="FontMarker" enabled="1" pass="0" locked="0">
+                <prop v="20" k="angle"/>
+                <prop v=")" k="chr"/>
+                <prop v="0,0,0,255" k="color"/>
+                <prop v="Arial Black" k="font"/>
+                <prop v="" k="font_style"/>
+                <prop v="1" k="horizontal_anchor_point"/>
+                <prop v="miter" k="joinstyle"/>
+                <prop v="0,0" k="offset"/>
+                <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+                <prop v="MM" k="offset_unit"/>
+                <prop v="35,35,35,255" k="outline_color"/>
+                <prop v="0" k="outline_width"/>
+                <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+                <prop v="MM" k="outline_width_unit"/>
+                <prop v="6" k="size"/>
+                <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+                <prop v="MM" k="size_unit"/>
+                <prop v="1" k="vertical_anchor_point"/>
+                <data_defined_properties>
+                  <Option type="Map">
+                    <Option type="QString" value="" name="name"/>
+                    <Option name="properties"/>
+                    <Option type="QString" value="collection" name="type"/>
+                  </Option>
+                </data_defined_properties>
+              </layer>
+            </symbol>
+          </layer>
+        </symbol>
+      </layer>
+    </symbol>
+    <symbol type="fill" force_rhr="0" alpha="1" clip_to_extent="1" tags="Cartoon" name="Childrens Book Water">
+      <layer class="SimpleFill" enabled="1" pass="0" locked="0">
+        <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
+        <prop v="97,174,195,255" k="color"/>
+        <prop v="bevel" k="joinstyle"/>
+        <prop v="0,0" k="offset"/>
+        <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+        <prop v="MM" k="offset_unit"/>
+        <prop v="100,152,210,255" k="outline_color"/>
+        <prop v="solid" k="outline_style"/>
+        <prop v="0.26" k="outline_width"/>
+        <prop v="MM" k="outline_width_unit"/>
+        <prop v="solid" k="style"/>
+        <effect type="effectStack" enabled="1">
+          <effect type="dropShadow">
+            <prop v="13" k="blend_mode"/>
+            <prop v="2.645" k="blur_level"/>
+            <prop v="MM" k="blur_unit"/>
+            <prop v="3x:0,0,0,0,0,0" k="blur_unit_scale"/>
+            <prop v="0,0,0,255" k="color"/>
+            <prop v="2" k="draw_mode"/>
+            <prop v="0" k="enabled"/>
+            <prop v="135" k="offset_angle"/>
+            <prop v="2" k="offset_distance"/>
+            <prop v="MM" k="offset_unit"/>
+            <prop v="3x:0,0,0,0,0,0" k="offset_unit_scale"/>
+            <prop v="1" k="opacity"/>
+          </effect>
+          <effect type="outerGlow">
+            <prop v="0" k="blend_mode"/>
+            <prop v="2.645" k="blur_level"/>
+            <prop v="MM" k="blur_unit"/>
+            <prop v="3x:0,0,0,0,0,0" k="blur_unit_scale"/>
+            <prop v="0,0,255,255" k="color1"/>
+            <prop v="0,255,0,255" k="color2"/>
+            <prop v="0" k="color_type"/>
+            <prop v="0" k="discrete"/>
+            <prop v="2" k="draw_mode"/>
+            <prop v="0" k="enabled"/>
+            <prop v="0.5" k="opacity"/>
+            <prop v="gradient" k="rampType"/>
+            <prop v="255,255,255,255" k="single_color"/>
+            <prop v="2" k="spread"/>
+            <prop v="MM" k="spread_unit"/>
+            <prop v="3x:0,0,0,0,0,0" k="spread_unit_scale"/>
+          </effect>
+          <effect type="drawSource">
+            <prop v="0" k="blend_mode"/>
+            <prop v="2" k="draw_mode"/>
+            <prop v="1" k="enabled"/>
+            <prop v="1" k="opacity"/>
+          </effect>
+          <effect type="innerShadow">
+            <prop v="13" k="blend_mode"/>
+            <prop v="0" k="blur_level"/>
+            <prop v="MM" k="blur_unit"/>
+            <prop v="3x:0,0,0,0,0,0" k="blur_unit_scale"/>
+            <prop v="0,0,0,255" k="color"/>
+            <prop v="2" k="draw_mode"/>
+            <prop v="1" k="enabled"/>
+            <prop v="-96" k="offset_angle"/>
+            <prop v="5.6" k="offset_distance"/>
+            <prop v="MM" k="offset_unit"/>
+            <prop v="3x:0,0,0,0,0,0" k="offset_unit_scale"/>
+            <prop v="0.2" k="opacity"/>
+          </effect>
+          <effect type="innerGlow">
+            <prop v="0" k="blend_mode"/>
+            <prop v="2.645" k="blur_level"/>
+            <prop v="MM" k="blur_unit"/>
+            <prop v="3x:0,0,0,0,0,0" k="blur_unit_scale"/>
+            <prop v="0,0,255,255" k="color1"/>
+            <prop v="0,255,0,255" k="color2"/>
+            <prop v="0" k="color_type"/>
+            <prop v="0" k="discrete"/>
+            <prop v="2" k="draw_mode"/>
+            <prop v="0" k="enabled"/>
+            <prop v="0.5" k="opacity"/>
+            <prop v="gradient" k="rampType"/>
+            <prop v="255,255,255,255" k="single_color"/>
+            <prop v="2" k="spread"/>
+            <prop v="MM" k="spread_unit"/>
+            <prop v="3x:0,0,0,0,0,0" k="spread_unit_scale"/>
+          </effect>
+        </effect>
+        <data_defined_properties>
+          <Option type="Map">
+            <Option type="QString" value="" name="name"/>
+            <Option name="properties"/>
+            <Option type="QString" value="collection" name="type"/>
+          </Option>
+        </data_defined_properties>
+      </layer>
+    </symbol>
+  </symbols>
+  <colorramps/>
+  <textformats/>
+  <labelsettings/>
+  <legendpatchshapes/>
+</qgis_style>

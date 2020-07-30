@@ -2,85 +2,189 @@
 <html>
 <head>
     <meta charset="utf8">
-    <title>Read data from External JSON file using JavaScript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <title>QGIS Style-Hub Downloads</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script>
+        function updateClipboard(newClip) {
+  navigator.clipboard.writeText(newClip).then(function() {
+    /* clipboard successfully set */
+  }, function() {
+    /* clipboard write failed */
+  });
+}
+    </script>
     <style>
-        * { font:17px 'Segoe UI'; }
-        table, th, td {
-            border: solid 1px #ddd;
-            border-collapse: collapse;
-            padding: 2px 3px;
-            text-align: center;
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
         }
-        th {
-            font-weight:bold;
+  
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
         }
-    </style>
+      </style>
+      <!-- Custom styles for this template -->
+    <link href="album.css" rel="stylesheet">
 </head>
 <body>
-    <h3>
-    	Data extracted from External JSON file and converted to an HTML table.
-    </h3>
-    <div id='showTable'></div>
+    <header>
+        <div class="collapse bg-dark" id="navbarHeader">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-8 col-md-7 py-4">
+                <h4 class="text-white">About</h4>
+                <p class="text-muted">Here you can browse free styles for QGIS. All styles are downloadable, or you can copy the style urls and use them in QGIS to import the styles. If you want you can submit your own styles to this repository and they will be included, pending time and a quick review.</p>
+              </div>
+              <div class="col-sm-4 offset-md-1 py-4">
+                <h4 class="text-white">Contact</h4>
+                <ul class="list-unstyled">
+                  <li><a href="https://twitter.com/klaskarlsson" class="text-white">Follow on Twitter</a></li>
+                  <li><a href="mailto:klas.karlsson@geosupportsystem.se" class="text-white">Email maintainer</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+          <div class="container d-flex justify-content-between">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+                <strong>Style-Hub</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main role="main">
+
+        <section class="jumbotron text-center">
+          <div class="container">
+            <h1>Style Hub</h1>
+            <p class="lead text-muted">Collection of free to use QGIS style xml-files to download and import.<br>To copy the url, rightclick the style url button and copy the link.</p>
+            
+          </div>
+        </section>
+      
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <a href="style-dir/fun.png">
+                <img class="img-fluid" alt="Responsive image" src="style-dir/fun.png">
+            </a>
+            <div class="card-body">
+              <p class="card-text">This collection of styles are not so serious and may not be usefull every day, but some of the styles use technics that may be usefull in other situations.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    <a class="btn btn-sm btn-outline-secondary" href="style-dir/fun.xml" role="button">XML</a>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="updateClipboard('https://style-hub.github.io/style-dir/fun.xml')">Copy</button>
+                </div>
+                <small class="text-muted">Klas Karlsson</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <a href="style-dir/random.png">  
+              <img class="img-fluid" alt="Responsive image" src="style-dir/random.png">
+              </a>
+              <div class="card-body">
+                <p class="card-text">This collection of styles are all more or less random in their appearance.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a class="btn btn-sm btn-outline-secondary" href="style-dir/random.xml" role="button">Style Url</a>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="updateClipboard('https://style-hub.github.io/style-dir/random.xml')">Copy</button>
+                  </div>
+                  <small class="text-muted">Klas Karlsson</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <a href="style-dir/cartoon.png">
+                <img class="img-fluid" alt="Responsive image" src="style-dir/cartoon.png">
+                </a>    
+              <div class="card-body">
+                <p class="card-text">This is a style package with five simple styles that could be suitable in a map with a Cartoon style.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a class="btn btn-sm btn-outline-secondary" href="style-dir/cartoon.xml" role="button">Style Url</a>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="updateClipboard('https://style-hub.github.io/style-dir/cartoon.xml')">Copy</button>
+                  </div>
+                  <small class="text-muted">Klas Karlsson</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <a href="style-dir/construction.png">
+                <img class="img-fluid" alt="Responsive image" src="style-dir/construction.png">
+                </a>    
+              <div class="card-body">
+                <p class="card-text">This is a style contains two styles. One metric and one imperial. It will only work for projected data [m/ft].</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a class="btn btn-sm btn-outline-secondary" href="style-dir/construction.xml" role="button">Style Url</a>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="updateClipboard('https://style-hub.github.io/style-dir/construction.xml')">Copy</button>
+                  </div>
+                  <small class="text-muted">Klas Karlsson</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <a href="style-dir/pattern.png">
+                <img class="img-fluid" alt="Responsive image" src="style-dir/pattern.png">
+                </a>    
+              <div class="card-body">
+                <p class="card-text">This is a style set with highly modifiable patterns. Change color, size, etc.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a class="btn btn-sm btn-outline-secondary" href="style-dir/pattern.xml" role="button">Style Url</a>
+                    <button class="btn btn-sm btn-outline-secondary" onclick="updateClipboard('https://style-hub.github.io/style-dir/pattern.xml')">Copy</button>
+                  </div>
+                  <small class="text-muted">Klas Karlsson</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</main>
+
+<footer class="text-muted">
+  <div class="container">
+    <p class="float-right">
+      <a href="#">Back to top</a>
+    </p>
+    <p>What is QGIS? <a href="https://qgis.org/">Visit the QGIS homepage</a> or read the <a href="https://docs.qgis.org/3.10/en/docs/user_manual/style_library/style_manager.html">Documentation</a> on styling.</p>
+  </div>
+</footer>
+
+
 </body>
-
-<script>
-    // Create XMLHttpRequest object.
-    var oXHR = new XMLHttpRequest();
-
-    // Initiate request.
-    oXHR.onreadystatechange = reportStatus;
-    oXHR.open("GET", "style-dir/_list_.json", true);  // get json file.
-    oXHR.send();
-
-    function reportStatus() {
-        if (oXHR.readyState == 4) {		// Check if request is complete.
-
-            // Create an HTML table using response from server.
-            createTableFromJSON(this.responseText);
-        }
-    }
-
-    // Create an HTML table using the JSON data.
-    function createTableFromJSON(jsonData) {
-        var arrBirds = [];
-        arrBirds = JSON.parse(jsonData); 	// Convert JSON to array.
-
-        var col = [];
-        for (var i = 0; i < arrBirds.length; i++) {
-            for (var key in arrBirds[i]) {
-                if (col.indexOf(key) === -1) {
-                    col.push(key);
-                }
-            }
-        }
-
-        // Create a dynamic table.
-        var table = document.createElement("table")     // Create table header.
-
-        var tr = table.insertRow(-1);                   // Table row.
-
-        for (var i = 0; i < col.length; i++) {
-            var th = document.createElement("th");      // Table header.
-            th.innerHTML = col[i];
-            tr.appendChild(th);
-        }
-
-        // Add JSON to the table rows.
-        for (var i = 0; i < arrBirds.length; i++) {
-
-            tr = table.insertRow(-1);
-
-            for (var j = 0; j < col.length; j++) {
-                var tabCell = tr.insertCell(-1);
-                tabCell.innerHTML = arrBirds[i][col[j]];
-            }
-        }
-
-        // Finally, add the dynamic table to a container.
-        var divContainer = document.getElementById("showTable");
-        divContainer.innerHTML = "";
-        divContainer.appendChild(table);
-    };
-</script>
 </html>
