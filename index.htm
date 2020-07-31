@@ -17,6 +17,7 @@
     /* clipboard write failed */
   });
 }
+
     </script>
     <style>
         .bd-placeholder-img {
@@ -75,7 +76,7 @@
         <section class="jumbotron text-center">
           <div class="container">
             <h1>Style Hub</h1>
-            <p class="lead text-muted">Collection of free to use QGIS style xml-files to download and import.<br>To copy the url, click the copy button, then paste the link in QGIS style manager.</p>
+            <p class="lead text-muted">Collections of free to use QGIS style xml-files to download and import.<br>To copy the url, click the copy button, then paste the link in QGIS style manager.</p>
             
           </div>
         </section>
@@ -87,10 +88,10 @@
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
             <div class="card-header">Fun</div>
-            <a href="style-dir/fun.png">
-                <img class="img-fluid" alt="Responsive image" src="style-dir/fun.png">
-            </a>
+            
             <div class="card-body">
+              <button type="button" class="btn" data-toggle="modal" data-target="#modal" data-whatever="fun"><img class="img-fluid" alt="Responsive image" src="style-dir/fun.png"></button>
+
               <p class="card-text">This collection of styles are not so serious and may not be usefull every day, but some of the styles use technics that may be usefull in other situations.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
@@ -105,10 +106,8 @@
         <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
               <div class="card-header">Random</div>
-              <a href="style-dir/random.png">  
-                <img class="img-fluid" alt="Responsive image" src="style-dir/random.png">
-              </a>
               <div class="card-body">
+                <button type="button" class="btn" data-toggle="modal" data-target="#modal" data-whatever="random"><img class="img-fluid" alt="Responsive image" src="style-dir/random.png"></button>
                 <p class="card-text">This collection of styles are all more or less random in their appearance.</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
@@ -123,10 +122,8 @@
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
               <div class="card-header">Cartoon</div>
-              <a href="style-dir/cartoon.png">
-                <img class="img-fluid" alt="Responsive image" src="style-dir/cartoon.png">
-              </a>    
               <div class="card-body">
+                <button type="button" class="btn" data-toggle="modal" data-target="#modal" data-whatever="cartoon"><img class="img-fluid" alt="Responsive image" src="style-dir/cartoon.png"></button>
                 <p class="card-text">This is a style package with five simple styles that could be suitable in a map with a Cartoon style.</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
@@ -142,10 +139,8 @@
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
               <div class="card-header">Construction</div>
-              <a href="style-dir/construction.png">
-                <img class="img-fluid" alt="Responsive image" src="style-dir/construction.png">
-              </a>    
               <div class="card-body">
+                <button type="button" class="btn" data-toggle="modal" data-target="#modal" data-whatever="construction"><img class="img-fluid" alt="Responsive image" src="style-dir/construction.png"></button>
                 <p class="card-text">This style contains two style options. One metric and one imperial. It will only work for projected data [m/ft].</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
@@ -160,10 +155,8 @@
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
               <div class="card-header">Pattern</div>
-              <a href="style-dir/pattern.png">
-                <img class="img-fluid" alt="Responsive image" src="style-dir/pattern.png">
-              </a>    
               <div class="card-body">
+                <button type="button" class="btn" data-toggle="modal" data-target="#modal" data-whatever="pattern"><img class="img-fluid" alt="Responsive image" src="style-dir/pattern.png"></button>
                 <p class="card-text">This is a style set with highly modifiable patterns. Change color, size, etc.</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
@@ -182,6 +175,37 @@
 
 
 </main>
+
+<!-- Image Modal -->
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel">Image Preview</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img class="img-fluid rounded mx-auto d-block" src="">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+
+$('#modal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var stylename = button.data('whatever') // Extract info from data-* attributes
+  var modal = $(this)
+  modal.find('.modal-title').text('Preview ' + stylename)
+  modal.find('.modal-body img').attr('src','style-dir/' + stylename + '.png')
+})
+</script>
+<!-- /Image Modal -->
 
 <footer class="text-muted">
   <div class="container">
