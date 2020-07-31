@@ -10,33 +10,20 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script>
-        function updateClipboard(newClip) {
-  navigator.clipboard.writeText(newClip).then(function() {
-    /* clipboard successfully set */
-  }, function() {
-    /* clipboard write failed */
-  });
-}
+      function updateClipboard(newClip) {
+          navigator.clipboard.writeText(newClip).then(function() {
+          /* clipboard successfully set */
+          
+        }, function() {
+          /* clipboard write failed */
+          alert('Your browser don\'t allow clipboard interaction with HTML5')
+        });
+      }
 
     </script>
-    <style>
-        .bd-placeholder-img {
-          font-size: 1.125rem;
-          text-anchor: middle;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          -ms-user-select: none;
-          user-select: none;
-        }
-  
-        @media (min-width: 768px) {
-          .bd-placeholder-img-lg {
-            font-size: 3.5rem;
-          }
-        }
-      </style>
+
       <!-- Custom styles for this template -->
-    <link href="album.css" rel="stylesheet">
+      <link href="album.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -46,7 +33,7 @@
               <div class="col-sm-8 col-md-7 py-4">
                 <h4 class="text-white">About</h4>
                 <p class="text-muted">Here you can browse free styles for QGIS. All styles are downloadable, or you can copy the style urls and use them in QGIS to import the styles. If you want you can submit your own styles to this repository and they will be included, pending time and a quick review.<br>
-                This is a DEMO site and not a permanent solution. That should include a "submit" form for easy contributing, search and filters. This requires an active server with PHP, database, etc.</p>
+                <br>This is a static DEMO site and not a permanent solution. That should include a "submit" form for easy contributing, search and filters, showing dynamic content. This requires an active server with PHP, database, etc.</p>
               </div>
               <div class="col-sm-4 offset-md-1 py-4">
                 <h4 class="text-white">Contact</h4>
@@ -54,6 +41,7 @@
                   <li><a href="https://twitter.com/klaskarlsson" class="text-white">Follow on Twitter</a></li>
                   <li><a href="mailto:klas.karlsson@geosupportsystem.se" class="text-white">Email maintainer</a></li>
                   <li><a href="https://github.com/style-hub/style-hub.github.io" class="text-white">Fork on GitHub</a></li>
+                  <li><a href="https://github.com/orgs/style-hub/people" class="text-white">Become Collaborator</a></li>
                 </ul>
               </div>
             </div>
@@ -76,15 +64,18 @@
         <section class="jumbotron text-center">
           <div class="container">
             <h1>Style Hub</h1>
-            <p class="lead text-muted">Collections of free to use QGIS style xml-files to download and import.<br>To copy the url, click the copy button, then paste the link in QGIS style manager.</p>
+            <p class="lead text-muted">Collections of free to use QGIS style xml-files to download and import. 
+              To use the url, click the copy button, then paste the url in QGIS style manager import dialogue.
+            </p>
             
           </div>
         </section>
       
   <div class="album py-5 bg-light">
     <div class="container">
-
       <div class="row">
+
+        <!-- Fun by Klas Karlsson -->
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
             <div class="card-header">Fun</div>
@@ -103,6 +94,8 @@
             </div>
           </div>
         </div>
+
+        <!-- Random by Klas Karlsson -->
         <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
               <div class="card-header">Random</div>
@@ -119,6 +112,8 @@
               </div>
             </div>
           </div>
+
+          <!-- Cartoon by Klas Karlsson -->
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
               <div class="card-header">Cartoon</div>
@@ -136,6 +131,7 @@
             </div>
           </div>
 
+          <!-- Construction by Klas Karlsson -->
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
               <div class="card-header">Construction</div>
@@ -152,6 +148,8 @@
               </div>
             </div>
           </div>
+
+          <!-- Pattern by Klas Karlsson -->
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
               <div class="card-header">Pattern</div>
@@ -168,6 +166,9 @@
               </div>
             </div>
           </div>
+
+          <!-- Additional styles here... -->
+
 
       </div>
     </div>
